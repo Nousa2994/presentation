@@ -1,0 +1,81 @@
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.about-me {
+  padding-top: 120px;
+}
+.avatar {
+  width: 250px;
+  height: auto;
+}
+.presentation {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.2rem;
+  padding: 20px;
+}
+.underline {
+  text-decoration: underline;
+  text-decoration-color: aqua;
+  text-decoration-thickness: 3px;
+}
+.download-button {
+  width: 200px;
+}
+.skills {
+  background-color: rgba(222, 227, 231, 255);
+  padding: 30px;
+}
+.skill-progress-bar {
+  height: 15px;
+  width: 100%;
+  background-color: white;
+}
+.skill-percent {
+  background-color: yellow;
+  height: 100%;
+}
+.progress-bars {
+  margin-bottom: 15px;
+}
+.Skill-label {
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 25px;
+}
+.contact-me {
+  padding: 20px;
+}
+.get-in-touch {
+  font-size: 4vw;
+}
+.contact img {
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+}
+.contact .text-container {
+  display: inline-block;
+  width: calc(100% - 30px); /** containers width - img width - margin-left **/
+  margin-left: 10px;
+  white-space: normal;
+  vertical-align: middle;
+}
+.technical-skills .big-label,
+.language-skills .big-label {
+  font-size: 2rem;
+  font-weight: bold;
+  padding-bottom: 2rem;
+}
+.about-me-text {
+  padding-top: 25px;
+  font-family: 'Libre Baskerville', serif;
+}
+
+
+app-blog::part(p) {
+  font-style: italic;
+}

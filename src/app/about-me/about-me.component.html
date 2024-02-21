@@ -1,0 +1,169 @@
+
+<section id="aboutme">
+  <div class="row about-me center">
+  <img class="avatar" src="assets/img/moi-avatar.png" />
+</div>
+<div class="row center">
+  <div class="col-12 col-sm-8 col-lg-6 presentation">
+    <b> Hi There !</b>
+    <p class="about-me-text" [style]="{'paddingTop': '15px', 'font-family': 'Verdana,sans-serif', 'line-height': 1.5}">
+      My Name is <span class="underline">Nesrine Ghribi</span>. A Highly
+      motivated software engineer who has
+      <span class="underline">5 years</span> of experience and proven
+      programming skills. Having a strong communication, leadership, and
+      technical background. I’m looking for a new opportunity in web
+      development.
+    </p>
+    <button
+      type="button"
+      (click)="openCvFile()"
+      class="btn btn-dark download-button"
+    >
+      download CV
+    </button>
+  </div>
+</div>
+</section>
+<section class="row skills justify-content-between" id="skills">
+  <div class="row Skill-label"><b>Skills</b></div>
+  <div class="col-12 col-sm-6 col-md-5  technical-skills">
+    <div class="big-label">Technical skills</div>
+    <div class="row progress-bars">
+      <div class="label"><b>Angular</b></div>
+      <div class="col-9">
+        <div class="skill-progress-bar">
+          <div class="skill-percent" [ngStyle]="{ width: '80%' }"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row progress-bars">
+      <div class="label"><b>Java</b></div>
+      <div class="col-9">
+        <div class="skill-progress-bar">
+          <div class="skill-percent" [ngStyle]="{ width: '70%' }"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row progress-bars">
+      <div class="label"><b>CSS</b></div>
+      <div class="col-9">
+        <div class="skill-progress-bar">
+          <div class="skill-percent" [ngStyle]="{ width: '60%' }"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row progress-bars">
+      <div class="label"><b>Spring</b></div>
+      <div class="col-9">
+        <div class="skill-progress-bar">
+          <div class="skill-percent" [ngStyle]="{ width: '65%' }"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 col-md-5 language-skills">
+    <div class="big-label">Languages</div>
+    <div class="row progress-bars">
+      <div class="label"><b>English</b></div>
+      <div class="col-9">
+        <div class="skill-progress-bar">
+          <div class="skill-percent" [ngStyle]="{ width: '80%' }"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row progress-bars">
+      <div class="label"><b>French</b></div>
+      <div class="col-9">
+        <div class="skill-progress-bar">
+          <div class="skill-percent" [ngStyle]="{ width: '100%' }"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row progress-bars">
+      <div class="label"><b>Arabic</b></div>
+      <div class="col-9">
+        <div class="skill-progress-bar">
+          <div class="skill-percent" [ngStyle]="{ width: '100%' }"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="row contact-me" id="contactme">
+  <div class="col-12 col-sm-6 d-flex align-items-start flex-column">
+    <div class="get-in-touch mb-auto p-2">
+      <b>Want to get in touch?</b>
+    </div>
+    <div class="contact contact-phone p-2">
+      <img src="assets/img/phone-solid.svg" />
+      <div class="text-container">+216 9 29 11 14 2</div>
+    </div>
+    <div class="contact contact-email p-2">
+      <img src="assets/img/envelope-solid.svg" />
+      <div class="text-container">nesrineghribi43gmail.com</div>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 form">
+    <form  [formGroup]="form" >
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="form-group">
+            <label for="fullName1">Full Name</label>
+            <input
+              type="Text"
+              class="form-control"
+              id="fullName1"
+              placeholder="Enter full Name"
+              formControlName="fullName"
+              name="fullName"
+              id="fullName"
+              [class.is-invalid]="fullName && fullName.invalid
+              && (fullName.touched || fullName.dirty)"
+              required=""
+            />
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="form-group">
+            <label for="inputEmail1">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="inputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+              formControlName="email"
+              name="email"
+              id="email"
+              [class.is-invalid]="email && email.invalid
+              && (email.touched || email.dirty)"
+              required
+            />
+            <small id="emailHelp" class="form-text text-muted"
+              >We'll never share your email with anyone else.</small
+            >
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-group">
+            <label for="formControlTextarea1">Message</label>
+            <textarea
+              class="form-control"
+              id="formControlTextarea1"
+              rows="4"
+              formControlName="message"
+              name="message"
+              id="message"
+              [class.is-invalid]="message && message.invalid
+              && (message.touched || message.dirty)"
+              required=""
+            ></textarea>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-dark" [disabled]="isLoading || fullName && fullName.invalid  || email && email.invalid ||message && fullName && message.invalid"(click)="sendEmail($event)">
+        <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        Submit</button>
+    </form>
+  </div>
+</section>

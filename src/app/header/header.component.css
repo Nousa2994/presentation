@@ -1,0 +1,26 @@
+a {
+  display: block;
+  position: relative;
+  padding: 0.2em 0;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Fade in */
+.active,
+a:hover {
+  text-decoration: underline;
+  text-decoration-color: #ff40ff !important;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  padding-right: 20px;
+  z-index: 9999999999999;
+}
