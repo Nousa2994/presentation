@@ -53,9 +53,7 @@ export class AboutMeComponent implements OnInit {
         () => {
           this.isLoading = false;
           console.log('SUCCESS!');
-          this.form.markAsPristine();
-          this.form.clearValidators();
-          this.form.markAsUntouched();
+          this.form.reset();
           this.form.setValue({
             fullName: '',
             email: '',
